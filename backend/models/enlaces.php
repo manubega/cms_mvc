@@ -12,7 +12,8 @@ class EnlacesModels{
 			$enlaces == "videos" ||
 			$enlaces == "suscriptores" ||
 			$enlaces == "mensajes" ||
-			$enlaces == "perfil"){
+			$enlaces == "perfil" ||
+			$enlaces == "logout"){
 
 			$module = "views/modules/".$enlaces.".php";
 		}

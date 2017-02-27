@@ -8,7 +8,7 @@ class Ingreso{
 		//COMPRUEBA SI VIENE INFORMACIÒN DEL USUARIO POR POST
 		if(isset($_POST["usuarioIngreso"])){
 
-			//VALIDACI'ON DE INGRESO DE CARACTERES ESPECIALES DEL USUARIO Y DEL PASSWORD
+			//VALIDACIòN DE INGRESO CON CARACTERES ESPECIALES DEL USUARIO Y DEL PASSWORD
 			if(preg_match('/^[a-zA-Z0-9]+$/', $_POST["usuarioIngreso"])&&
 			   preg_match('/^[a-zA-Z0-9]+$/', $_POST["passwordIngreso"])){
 
@@ -37,12 +37,12 @@ class Ingreso{
 
 						$respuestaActualizarIntentos = IngresoModels::intentosModel($datosController, "usuarios");
 
+						//SE INICIA UNA SESION
 						session_start();
-
 						$_SESSION["validar"] = true;
 						$_SESSION["usuario"] = $respuesta["usuario"];
 
-						header("location:index.php?action=inicio");
+						header("location:inicio");
 
 					}//#2 FIN
 
@@ -59,8 +59,6 @@ class Ingreso{
 
 					}
 				
-
-			
 
 				}#1 FIN
 					else{
